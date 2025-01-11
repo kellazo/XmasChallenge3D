@@ -4,11 +4,12 @@ public class Cilindro : MonoBehaviour
 {
    // [SerializeField] private float velocidadRotacion;
     private Rigidbody rb;
-    
+    [SerializeField] private float fuerzaRotacion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        rb = GetComponent<Rigidbody>();
+       rb.AddTorque(Vector3.up * fuerzaRotacion, ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
